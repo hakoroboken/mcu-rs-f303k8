@@ -20,16 +20,18 @@ jobs:
         
 
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v2
           
-      -
-        name: build-example-application
+      - name: build-example-application
         run: |
           set -e
           mbed-tools deploy
           mbed-tools compile -t GCC_ARM -m ${{ matrix.target }} --profile ${{ matrix.profile }}
+          
+      - name: build-example-application
+        run: |
+          ls
 
       - name: Update
         uses: s0/git-publish-subdir-action@develop
