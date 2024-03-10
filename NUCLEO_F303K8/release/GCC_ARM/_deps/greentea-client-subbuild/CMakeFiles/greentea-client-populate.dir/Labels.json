@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/CMakeFiles/greentea-client-populate"
+		},
+		{
+			"file" : "/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/CMakeFiles/greentea-client-populate.rule"
+		},
+		{
+			"file" : "/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/CMakeFiles/greentea-client-populate-complete.rule"
+		},
+		{
+			"file" : "/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-build.rule"
+		},
+		{
+			"file" : "/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-configure.rule"
+		},
+		{
+			"file" : "/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-download.rule"
+		},
+		{
+			"file" : "/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-install.rule"
+		},
+		{
+			"file" : "/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-mkdir.rule"
+		},
+		{
+			"file" : "/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-patch.rule"
+		},
+		{
+			"file" : "/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-test.rule"
+		},
+		{
+			"file" : "/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"greentea-client-populate"
+		],
+		"name" : "greentea-client-populate"
+	}
+}

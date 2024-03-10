@@ -1,0 +1,21 @@
+# ninja log v5
+0	18	1710051777297756806	greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-mkdir	fff0e5ce2ce3ebad
+0	18	1710051777297756806	/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-mkdir	fff0e5ce2ce3ebad
+18	288	1710051777565759613	greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-download	64ce91d5c9a04a3d
+18	288	1710051777565759613	/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-download	64ce91d5c9a04a3d
+288	297	0	greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-update	b7515ce4b1a4a44
+288	297	0	/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-update	b7515ce4b1a4a44
+297	302	1710051777581759781	greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-patch	182ed1a15ad376cf
+297	302	1710051777581759781	/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-patch	182ed1a15ad376cf
+302	307	1710051777585759822	greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-configure	aeee1516794701c8
+302	307	1710051777585759822	/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-configure	aeee1516794701c8
+307	312	1710051777589759864	greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-build	347460fae891f787
+307	312	1710051777589759864	/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-build	347460fae891f787
+312	317	1710051777597759948	greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-install	60467d1ddf7e118
+312	317	1710051777597759948	/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-install	60467d1ddf7e118
+317	322	1710051777601759990	greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-test	70ce161cbddf9184
+317	322	1710051777601759990	/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-test	70ce161cbddf9184
+322	330	1710051777609760074	CMakeFiles/greentea-client-populate-complete	21f889dba5bbca46
+322	330	1710051777609760074	greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-done	21f889dba5bbca46
+322	330	1710051777609760074	/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/CMakeFiles/greentea-client-populate-complete	21f889dba5bbca46
+322	330	1710051777609760074	/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-subbuild/greentea-client-populate-prefix/src/greentea-client-populate-stamp/greentea-client-populate-done	21f889dba5bbca46
