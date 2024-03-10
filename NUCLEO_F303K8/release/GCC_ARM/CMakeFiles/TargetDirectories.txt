@@ -1,4 +1,4 @@
-/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/CMakeFiles/mbed-os-example-blinky.dir
+/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/CMakeFiles/mcu-rs-f303k8.dir
 /__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/CMakeFiles/edit_cache.dir
 /__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/CMakeFiles/rebuild_cache.dir
 /__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/CMakeFiles/list_install_components.dir

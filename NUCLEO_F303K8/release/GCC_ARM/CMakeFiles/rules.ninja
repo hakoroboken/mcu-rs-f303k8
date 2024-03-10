@@ -6,7 +6,7 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: mbed-os-example-blinky
+# Project: mcu-rs-f303k8
 # Configurations: release
 # =============================================================================
 # =============================================================================
@@ -14,7 +14,7 @@
 #############################################
 # Rule for compiling ASM files.
 
-rule ASM_COMPILER__mbed-os-example-blinky_release
+rule ASM_COMPILER__mcu-rs-f303k8_release
   depfile = $DEP_FILE
   deps = gcc
   command = /opt/mbed-os-toolchain/gcc-arm-none-eabi-10.3-2021.07/bin/arm-none-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -24,7 +24,7 @@ rule ASM_COMPILER__mbed-os-example-blinky_release
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__mbed-os-example-blinky_release
+rule C_COMPILER__mcu-rs-f303k8_release
   depfile = $DEP_FILE
   deps = gcc
   command = /usr/bin/ccache /opt/mbed-os-toolchain/gcc-arm-none-eabi-10.3-2021.07/bin/arm-none-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -34,7 +34,7 @@ rule C_COMPILER__mbed-os-example-blinky_release
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__mbed-os-example-blinky_release
+rule CXX_COMPILER__mcu-rs-f303k8_release
   depfile = $DEP_FILE
   deps = gcc
   command = /usr/bin/ccache /opt/mbed-os-toolchain/gcc-arm-none-eabi-10.3-2021.07/bin/arm-none-eabi-g++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -44,7 +44,7 @@ rule CXX_COMPILER__mbed-os-example-blinky_release
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__mbed-os-example-blinky_release
+rule CXX_EXECUTABLE_LINKER__mcu-rs-f303k8_release
   command = $PRE_LINK && /opt/mbed-os-toolchain/gcc-arm-none-eabi-10.3-2021.07/bin/arm-none-eabi-g++ $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT

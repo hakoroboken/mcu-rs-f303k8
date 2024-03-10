@@ -207,7 +207,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=mbed-os-example-blinky
+CMAKE_PROJECT_NAME:STATIC=mcu-rs-f303k8
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.1
@@ -348,15 +348,6 @@ greentea_IS_TOP_LEVEL:STATIC=OFF
 greentea_SOURCE_DIR:STATIC=/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/_deps/greentea-client-src
 
 //Value Computed by CMake
-mbed-os-example-blinky_BINARY_DIR:STATIC=/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM
-
-//Value Computed by CMake
-mbed-os-example-blinky_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-mbed-os-example-blinky_SOURCE_DIR:STATIC=/__w/mcu-rs-f303k8/mcu-rs-f303k8
-
-//Value Computed by CMake
 mbed-os_BINARY_DIR:STATIC=/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM/mbed-os
 
 //Value Computed by CMake
@@ -364,6 +355,15 @@ mbed-os_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 mbed-os_SOURCE_DIR:STATIC=/__w/mcu-rs-f303k8/mcu-rs-f303k8/mbed-os
+
+//Value Computed by CMake
+mcu-rs-f303k8_BINARY_DIR:STATIC=/__w/mcu-rs-f303k8/mcu-rs-f303k8/cmake_build/NUCLEO_F303K8/release/GCC_ARM
+
+//Value Computed by CMake
+mcu-rs-f303k8_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+mcu-rs-f303k8_SOURCE_DIR:STATIC=/__w/mcu-rs-f303k8/mcu-rs-f303k8
 
 
 ########################
