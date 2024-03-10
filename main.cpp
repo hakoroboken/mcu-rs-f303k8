@@ -1,9 +1,4 @@
-#include "InterfaceCAN.h"
-#include "PinNames.h"
 #include "mbed.h"
-#include <cstdint>
-#include <cstdio>
-#include <string>
 
 #if !DEVICE_CAN
 #error [NOT_SUPPORTED] CAN not supported for this target
