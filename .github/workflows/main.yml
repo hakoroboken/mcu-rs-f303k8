@@ -3,8 +3,6 @@ name: Build example application
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:  
   build-cli-v2:
