@@ -1,4 +1,9 @@
+#include "InterfaceCAN.h"
+#include "PinNames.h"
 #include "mbed.h"
+#include <cstdint>
+#include <cstdio>
+#include <string>
 
 #if !DEVICE_CAN
 #error [NOT_SUPPORTED] CAN not supported for this target
@@ -32,15 +37,43 @@ volatile bool motor_data_send_flag = false;
 uint8_t motor_life_check = 0;
 uint8_t host_controller_life_check = 0;
 
-void calculatePID() {
-    const auto err = motor_param::SET_SPEED - motor_param::speed;
-    // Calculate PD
-    const auto p_out = err / motor_param::p_gain;
-    const auto d_out = (err - motor_param::err_last) * motor_param::d_gain;
-    motor_param::power += p_out + d_out;
+// PID
+const double rpm2ampare = 0.29411764705882354;
 
-    // Update error history
-    motor_param::err_last = err;
+double prev_input_UsinginputDelay;
+double prev_output_UsinginputDelay;
+
+double inputDelay(double input){
+    double output = 0.04761904761904762*input + 0.04761904761904762* prev_input_UsinginputDelay + 0.9047619047619048* prev_output_UsinginputDelay;
+
+    prev_input_UsinginputDelay = input;
+    prev_output_UsinginputDelay = output;
+
+    return output;
+}
+
+double plantModel;
+double prev_ampare;
+double prev_output;
+
+double Pm( double wantAmpare){
+    plantModel = 0.085 * wantAmpare + 0.085 * prev_ampare + 0.95 * prev_output;
+
+    prev_ampare = wantAmpare;
+    prev_output = plantModel;
+
+    return plantModel;
+}
+
+const double Kp_speed = 6.5;
+
+void calculatePID() {
+    const double filteredRPM = inputDelay((double)motor_param::SET_SPEED);
+    const double needRPM = filteredRPM + Kp_speed * (filteredRPM - motor_param::speed);
+    const double wantAmpare = needRPM * rpm2ampare;
+    const double modelValue = Pm( wantAmpare);
+    double inputAmpare = wantAmpare + ( modelValue - motor_param::speed);
+    motor_param::power = inputAmpare;
     
     // Saturation Logic
     if (motor_param::power > MAX_POWER) motor_param::power = MAX_POWER;
@@ -53,25 +86,23 @@ void flip() {
 
     // data
     motor_send_count++;
-    if(motor_send_count > 20){
+    if(motor_send_count > 7){
         motor_send_count = 0;
         motor_data_send_flag = true;
     }
 
     // MRM
     motor_life_check++;
-    if(motor_life_check > 20){
-        motor_life_check = 21;
-        motor_param::speed = 0;
+    if(motor_life_check > 50){
+        motor_life_check = 51;
         motor_param::power = 0;
         motor_param::err_last = 0;
     }
 
     // MRM
     host_controller_life_check++;
-    if(host_controller_life_check > 20){
-        host_controller_life_check = 21;
-        motor_param::speed = 0;
+    if(host_controller_life_check > 50){
+        host_controller_life_check = 51;
         motor_param::power = 0;
         motor_param::err_last = 0;
     }
@@ -92,6 +123,7 @@ void on_rx_interrupt()
 }
 
 
+
 int main() {
     serial_port.baud(115200);
     serial_port.format(8, SerialBase::None,  1);
@@ -101,7 +133,7 @@ int main() {
     motor_param::d_gain = 2;
     motor_param::SET_SPEED = 0;
 
-    flipper.attach(&flip, 5ms);
+    flipper.attach(&flip, 4ms);
 
     rp2040_life.mode(PullDown);
     cw_ccw.mode(PullDown);
@@ -118,11 +150,6 @@ int main() {
 
         // Check flag and send CAN message outside of ISR
         if (newCanMessage) {
-            if (rp2040_life == 0) {
-                motor_param::speed = 0;
-                motor_param::power = 0;
-                motor_param::err_last = 0;
-            }
             auto msg = CANMessage();
             msg.id = 0x200;
             msg.len = 8;
