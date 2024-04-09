@@ -1,5 +1,3 @@
-#include "InterfaceCAN.h"
-#include "PinNames.h"
 #include "mbed.h"
 #include <cstdint>
 #include <cstdio>
