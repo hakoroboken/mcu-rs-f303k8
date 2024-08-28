@@ -16,7 +16,6 @@ static UnbufferedSerial serial_port(PA_9, PA_10);
 DigitalIn  cw_ccw(PB_5);
 DigitalOut rp2040reseter(PB_4);
 
-
 hakorobo::pid::pid_parameter<double> pid_param = {
     0.0,    // sense_speed_rpm
     0.0,    // target_speed_rpm
@@ -28,15 +27,15 @@ hakorobo::pid::pid_parameter<double> pid_param = {
 
 Ticker flipper;
 volatile bool newCanMessage = false;
-uint8_t motor_send_count = 0;
+volatile uint8_t motor_send_count = 0;
 volatile bool motor_data_send_flag = false;
 
 // MRM
-uint8_t motor_life_check = 0;
-uint8_t host_controller_life_check = 0;
-
+volatile uint8_t motor_life_check = 0;
+volatile uint8_t host_controller_life_check = 0;
 
 void flip() {
+    __disable_irq();
     pid_param.control_order = hakorobo::pid::calculatePID(pid_param);
     newCanMessage = true;
 
@@ -60,18 +59,18 @@ void flip() {
         host_controller_life_check = 51;
         pid_param.control_order = 0.0;
     }
+    __enable_irq();
 }
 
-void on_rx_interrupt()
-{
+void on_rx_interrupt() {
     host_controller_life_check = 0;
     uint8_t power;
+    ssize_t bytes_read = serial_port.read(&power, 1);
+    if (bytes_read <= 0) { return; }
 
-    if (!serial_port.read(&power, 1)) { return;}
-
-    if(cw_ccw){
+    if (cw_ccw.read()) {
         pid_param.target_speed_rpm = power * 19;
-    }else{
+    } else {
         pid_param.target_speed_rpm = power * 19 * -1;
     }
 }
@@ -86,9 +85,8 @@ int main() {
 
     {
         // rp2040 reset
-        ThisThread::sleep_for(500ms);
         rp2040reseter.write(0);
-        ThisThread::sleep_for(10ms);
+        ThisThread::sleep_for(3000ms);
         rp2040reseter.write(1);
     }
 
@@ -107,8 +105,9 @@ int main() {
             auto msg = CANMessage();
             msg.id = 0x200;
             msg.len = 8;
-            msg.data[0] = (static_cast<int16_t>(pid_param.control_order) >> 8) & 0xff;
-            msg.data[1] = static_cast<int16_t>(pid_param.control_order) & 0xff;
+            int16_t control_order = static_cast<int16_t>(pid_param.control_order);
+            msg.data[0] = (control_order >> 8) & 0xff;
+            msg.data[1] = control_order & 0xff;
             can.write(msg);
             newCanMessage = false;
         }
